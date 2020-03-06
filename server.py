@@ -14,7 +14,7 @@ def html_page(page_name):
     return render_template(page_name)
 
 def write_file(data):
-    with open("./venv/data.txt", "a+") as file:
+    with open("data.txt", "a+") as file:
         now = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
         email = data["email"]
         subject = data["subject"]
@@ -22,7 +22,7 @@ def write_file(data):
         file.write(f"{now}, {email}, {subject}, {message}\n")
 
 def write_csv(data):
-    with open("./venv/data.csv", "a", newline="") as database:
+    with open("data.csv", "a", newline="") as database:
         now = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
         email = data["email"]
         subject = data["subject"]
